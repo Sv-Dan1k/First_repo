@@ -1,8 +1,9 @@
 import random
 
 
-def get_numbers_ticket(min, max, quantity):
-    ticket_lottery = random.sample(range(1, 36), k=5)
+def get_numbers_ticket(min=1, max=36, quantity=5):
+    ticket_lottery = random.sample(range(min, max), quantity)
+    ticket_lottery.sort()
     print("Provide 5 numbers from 1 to 36 (one by one- separated by spacebars):")
     ticket_input: list = list(map(int, input().split()))
     result = list(zip(ticket_lottery, ticket_input))
@@ -16,4 +17,4 @@ def get_numbers_ticket(min, max, quantity):
     print('\nTotal points', points)
 
 
-ticket_lottery = get_numbers_ticket(min=1, max=36, quantity=5)
+get_numbers_ticket()
